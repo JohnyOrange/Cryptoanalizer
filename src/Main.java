@@ -19,7 +19,7 @@ public class Main {
         if (command.equals("analyze")){
             Path samplePath = Path.of(args[1]);
             Path encryptedPath = Path.of(args[2]);
-            StaticAnalyzer.analyze(samplePath, encryptedPath);
+            StaticAnalyzer.decrypt(samplePath, encryptedPath);
         }
 
     }

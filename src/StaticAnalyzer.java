@@ -4,7 +4,7 @@ import java.nio.file.Path;
 import java.util.List;
 
 public class StaticAnalyzer {
-    public static void analyze(Path sampleFilePath, Path encryptedFilePath){
+    public static void decrypt(Path sampleFilePath, Path encryptedFilePath){
 
         boolean comparator = false;
         int offset = 0;
