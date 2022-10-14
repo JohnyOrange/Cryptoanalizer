@@ -4,16 +4,21 @@ import java.nio.file.Path;
 import java.util.List;
 
 public class StaticAnalyzer {
-    public static void decrypt(Path sampleFilePath, Path encryptedFilePath){
+
+    private StaticAnalyzer() {
+    }
+
+    public static int decode(Path sampleFilePath, Path encodedFilePath, String command){
 
         boolean comparator = false;
-        int offset = 0;
-        Path newFilePath = FileHandler.createNewFile(encryptedFilePath, "decrypt");
+        int key = 0;
+        StringBuilder sb = new StringBuilder();
+        Path decodedFilePath = FileHandler.createNewFile(encodedFilePath, command, sb);
 
-        while (!comparator && offset < 33){
+        while (!comparator && key < 33){
             List<String> sampleFileList = FileHandler.readFile(sampleFilePath);
             int[] sampleFileGraph = getFileGraph(sampleFileList);
-            List<String> encryptedFileList = FileHandler.readFile(encryptedFilePath);
+            List<String> encryptedFileList = FileHandler.readFile(encodedFilePath);
             int[] encryptedFileGraph = getFileGraph(encryptedFileList);
 
             comparator = compare(sampleFileGraph, encryptedFileGraph);
@@ -21,17 +26,17 @@ public class StaticAnalyzer {
             if (comparator){
                 break;
             } else {
-                StringBuilder sb = Encryptor.decrypt(encryptedFilePath, 1);
-                encryptedFilePath = newFilePath;
+                sb = Encoder.decode(encodedFilePath, 1);
+                encodedFilePath = decodedFilePath;
                 try {
-                    Files.writeString(encryptedFilePath, sb);
+                    Files.writeString(encodedFilePath, sb);
                 } catch (IOException e) {
                     throw new RuntimeException(e);
                 }
-                offset++;
+                key++;
             }
         }
-        System.out.println(offset);
+        return key;
 
 
 
@@ -51,7 +56,7 @@ public class StaticAnalyzer {
     }
 
     private static int[] getFileGraph(List<String> sampleFileList) {
-        int length = Alphabet.getAlphabetLengtn();
+        int length = Alphabet.getCombineAlphabetLengtn();
         int[] fileGraph = new int[length];
         int count = 0;
         for (String line :

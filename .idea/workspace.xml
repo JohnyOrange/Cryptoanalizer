@@ -6,9 +6,13 @@
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="14516b2b-9e13-43ea-b44e-0726ffebba55" name="Changes" comment="Stable version without GUI">
+    <list default="true" id="14516b2b-9e13-43ea-b44e-0726ffebba55" name="Changes" comment="Added tag">
+      <change afterPath="$PROJECT_DIR$/src/ErrorHandler.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Alphabet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Alphabet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Encryptor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Encoder.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/FileHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/FileHandler.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/StaticAnalyzer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/StaticAnalyzer.java" afterDir="false" />
     </list>
@@ -47,7 +51,7 @@
     "project.structure.last.edited": "Artifacts",
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.2",
-    "settings.editor.selected.configurable": "preferences.pluginManager"
+    "settings.editor.selected.configurable": "preferences.keymap"
   }
 }]]></component>
   <component name="RunManager" selected="Application.Decrypt test">
@@ -70,7 +74,31 @@
     <configuration name="Analyzor test" type="Application" factoryName="Application">
       <option name="MAIN_CLASS_NAME" value="Main" />
       <module name="Java Syntax Final Project" />
-      <option name="PROGRAM_PARAMETERS" value="analyze &quot;C:\Users\johny\OneDrive\Документы\Java University\Итоговый проект - 1 модуль\FaB.txt&quot; &quot;C:\Users\johny\OneDrive\Документы\Java University\Итоговый проект - 1 модуль\SoIaF_encoded.txt&quot;" />
+      <option name="PROGRAM_PARAMETERS" value="bruteforce &quot;C:\Users\johny\OneDrive\Документы\Java University\Итоговый проект - 1 модуль\SoIaF_encoded.txt&quot; &quot;C:\Users\johny\OneDrive\Документы\Java University\Итоговый проект - 1 модуль\FaB.txt&quot;" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="BAD_ARGUMENT (command)" type="Application" factoryName="Application">
+      <option name="MAIN_CLASS_NAME" value="Main" />
+      <module name="Java Syntax Final Project" />
+      <option name="PROGRAM_PARAMETERS" value="command &quot;C:\Users\johny\OneDrive\Документы\Java University\Итоговый проект - 1 модуль\Hamlet.txt&quot; 300" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="BAD_ARGUMENT (path)" type="Application" factoryName="Application">
+      <option name="MAIN_CLASS_NAME" value="Main" />
+      <module name="Java Syntax Final Project" />
+      <option name="PROGRAM_PARAMETERS" value="encode &quot;C:\Users\johny\OneDrive\Документы\Java University\Итоговый проект - 1 модуль\export_file_132963.csv&quot; 10" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="BAD_ARGUMENT" type="Application" factoryName="Application">
+      <option name="MAIN_CLASS_NAME" value="Main" />
+      <module name="Java Syntax Final Project" />
+      <option name="PROGRAM_PARAMETERS" value="15" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -78,7 +106,7 @@
     <configuration name="Decrypt test RU" type="Application" factoryName="Application">
       <option name="MAIN_CLASS_NAME" value="Main" />
       <module name="Java Syntax Final Project" />
-      <option name="PROGRAM_PARAMETERS" value="decrypt &quot;C:\Users\johny\OneDrive\Документы\Java University\Итоговый проект - 1 модуль\ТЗ криптоанализатор(encrypted).txt&quot; 6" />
+      <option name="PROGRAM_PARAMETERS" value="decode &quot;C:\Users\johny\OneDrive\Документы\Java University\Итоговый проект - 1 модуль\ТЗ криптоанализатор(encoded).txt&quot; 6" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -86,7 +114,7 @@
     <configuration name="Decrypt test" type="Application" factoryName="Application">
       <option name="MAIN_CLASS_NAME" value="Main" />
       <module name="Java Syntax Final Project" />
-      <option name="PROGRAM_PARAMETERS" value="decrypt &quot;C:\Users\johny\OneDrive\Документы\Java University\Итоговый проект - 1 модуль\Hamlet(encrypted).txt&quot; 14" />
+      <option name="PROGRAM_PARAMETERS" value="decode &quot;C:\Users\johny\OneDrive\Документы\Java University\Итоговый проект - 1 модуль\Hamlet(encoded).txt&quot; 1500" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -94,7 +122,7 @@
     <configuration name="Encrypt test RU" type="Application" factoryName="Application">
       <option name="MAIN_CLASS_NAME" value="Main" />
       <module name="Java Syntax Final Project" />
-      <option name="PROGRAM_PARAMETERS" value="encrypt &quot;C:\Users\johny\OneDrive\Документы\Java University\Итоговый проект - 1 модуль\ТЗ криптоанализатор.txt&quot; 6" />
+      <option name="PROGRAM_PARAMETERS" value="encode &quot;C:\Users\johny\OneDrive\Документы\Java University\Итоговый проект - 1 модуль\ТЗ криптоанализатор.txt&quot; 6" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -102,7 +130,7 @@
     <configuration name="Encrypt test" type="Application" factoryName="Application">
       <option name="MAIN_CLASS_NAME" value="Main" />
       <module name="Java Syntax Final Project" />
-      <option name="PROGRAM_PARAMETERS" value="encrypt &quot;C:\Users\johny\OneDrive\Документы\Java University\Итоговый проект - 1 модуль\Hamlet.txt&quot; 14" />
+      <option name="PROGRAM_PARAMETERS" value="encode &quot;C:\Users\johny\OneDrive\Документы\Java University\Итоговый проект - 1 модуль\Hamlet.txt&quot; 1500" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -117,6 +145,9 @@
     </configuration>
     <list>
       <item itemvalue="Application.Encrypt test" />
+      <item itemvalue="Application.BAD_ARGUMENT" />
+      <item itemvalue="Application.BAD_ARGUMENT (command)" />
+      <item itemvalue="Application.BAD_ARGUMENT (path)" />
       <item itemvalue="Application.Analyzor test" />
       <item itemvalue="Application.Analyzor test 2" />
       <item itemvalue="Application.Encrypt test RU" />
@@ -142,7 +173,14 @@
       <option name="project" value="LOCAL" />
       <updated>1665247296406</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Added tag">
+      <created>1665646134349</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1665646134349</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -158,6 +196,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Stable version without GUI" />
-    <option name="LAST_COMMIT_MESSAGE" value="Stable version without GUI" />
+    <MESSAGE value="Added tag" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added tag" />
   </component>
 </project>

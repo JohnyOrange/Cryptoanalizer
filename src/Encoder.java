@@ -2,9 +2,11 @@
 import java.nio.file.Path;
 import java.util.List;
 
-public class Encryptor {
+public class Encoder {
+    private Encoder() {
+    }
 
-    public static StringBuilder encrypt(Path path, int key){
+    public static StringBuilder encode(Path path, int key){
 
         List<String> list = FileHandler.readFile(path);
 
@@ -23,8 +25,14 @@ public class Encryptor {
                     continue;
                 }
 
+                int alphabetLength = Alphabet.getAlphabetLength(range);
+
+                if (Math.abs(key) > alphabetLength){
+                    key = key % (alphabetLength);
+                }
+
                 encryptedLetter = (char) (letter + key);
-                assert range != null;
+
                 if (encryptedLetter > range[1]) {
                     encryptedLetter = (char) (range[0] + (encryptedLetter - range[1]) - 1);
                 }
@@ -37,9 +45,8 @@ public class Encryptor {
         }
         return sb;
     }
-    public static StringBuilder decrypt(Path path, int key){
-        int decryptKey = key * -1;
-        return encrypt(path, decryptKey);
+    public static StringBuilder decode(Path path, int key){
+        return encode(path, -key);
     }
 
 

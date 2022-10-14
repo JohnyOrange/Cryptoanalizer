@@ -4,11 +4,13 @@ import java.nio.file.Path;
 import java.util.List;
 
 public class FileHandler {
+    private FileHandler() {
+    }
 
-    public static void createNewFile(Path path, String command, StringBuilder sb){
+    public static Path createNewFile(Path path, String command, StringBuilder sb){
         String fileName = String.valueOf(path.getFileName());
-        String fileExtension = fileName.substring(fileName.indexOf('.'));
-        String newFileName = fileName.substring(0, fileName.indexOf('.')) + "(" + command + "ed)" + fileExtension;
+        String fileExtension = getFileExtension(path);
+        String newFileName = fileName.substring(0, fileName.indexOf('.')) + "(" + command + "d)" + fileExtension;
         String outputFIlePath = path.getParent() + "\\" + newFileName;
 
         if (!Files.exists(Path.of(outputFIlePath))){
@@ -23,22 +25,12 @@ public class FileHandler {
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
+        return Path.of(outputFIlePath);
     }
 
-    public static Path createNewFile(Path path, String command){
+    public static String getFileExtension(Path path){
         String fileName = String.valueOf(path.getFileName());
-        String fileExtension = fileName.substring(fileName.indexOf('.'));
-        String newFileName = fileName.substring(0, fileName.indexOf('.')) + "(" + command + "ed)" + fileExtension;
-        String outputFIlePath = path.getParent() + "\\" + newFileName;
-
-        if (!Files.exists(Path.of(outputFIlePath))){
-            try {
-                Files.createFile(Path.of(outputFIlePath));
-            } catch (IOException e) {
-                throw new RuntimeException(e);
-            }
-        }
-        return Path.of(outputFIlePath);
+        return fileName.substring(fileName.indexOf('.'));
     }
 
     public static List<String> readFile(Path path) {
